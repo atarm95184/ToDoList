@@ -19,5 +19,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # 這裡先留空，等你的 views 寫好再加網址
+    path("", views.todo_list, name="todo-list"),
+    path("delete/<int:id>/", views.todo_delete, name="todo-delete"),
+    # path("create/", views.todo_create, name="todo-create"),
 ]
