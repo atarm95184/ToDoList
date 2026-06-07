@@ -17,7 +17,7 @@ def todo_delete(request, id):
         print(todo)
         todo.delete()
         return HttpResponse(f"刪除成功: {id}")
-    except:
+    except Todo.DoesNotExist:
         print("無ID")
 
     return redirect("todo-list")
