@@ -6,8 +6,21 @@
     {% block head %}
     <title>Document</title>
     {% endblock %}
+    <style>
+        #navbar {
+    background-color: rgb(231, 206, 93); /* 明亮黃底 */
+    color: rgb(40, 40, 40);              /* 💡 改成深灰黑字 */
+    padding: 10px;
+}
+    </style>    
+</head>
+
+
+
 </head>
 <body>
+    <a href="{% url 'todo-list' %}">首頁</a>
+    <a href="{% url 'todo-create' %}">新增TODO</a>
     {% block content %}
     
     {% endblock %}

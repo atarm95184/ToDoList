@@ -1,55 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDOList</title>
-     <style>
-        .todo-field {
-            background-color: antiquewhite;
-            margin: 24px;
-            padding: 12px;
-            border-radius: 12px;
-            width: 400px;
-        }
+{% extends 'base.html' %}
 
-        .title {
-            margin-top: 12px;
-            font-size: 32px;
-        }
+{% block head %}
+<title>代辦事項列表</title>
+{% endblock %}
 
-        .created {
-            background-color: cadetblue;
-            color: white;
-            border-radius: 6px;
-            padding: 3px;
-        }
-
-        .content {
-            border-radius: 12px;
-            color: rgb(170, 94, 94);
-            padding: 12px;
-        }
-
-        .completed {
-            margin-left: 12px;
-            color: blue;
-        }
-
-        .important {
-            margin-left: 12px;
-            color: red;
-        }
-    </style>
-</head>
-<body>
-    <h1>代辦事項列表</h1>
-    <a href="{% url 'todo-create' %}">新增TODO</a>
-    {% for todo in todos %}
-   <div class="todo-field">
+{% block content %}
+    
+{% for todo in todos %}
+    <div class="todo-field">
         <small class="created">{{todo.created}}
-
         </small>
+
         {% if todo.important %}
         <span class="important">重要</span>
         {% endif %}
@@ -64,6 +25,5 @@
         <a href="{% url 'todo-update'  todo.id  %}">更新</a>
 
     </div>
-    {% endfor %}
-</body>
-</html>
+{% endfor %}
+{% endblock %}
