@@ -24,3 +24,10 @@
 
 - 新增APP    
     - python manage.py startapp users 
+
+### 發布相關指令
+- pip freeze > requirements.txt
+
+
+###  將.env雲端加入  
+- render-environement
